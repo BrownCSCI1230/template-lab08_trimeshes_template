@@ -400,7 +400,11 @@ void GLWidget::settingsChange()
         }
 
     }
+    makeCurrent();
+    m_vao.bind();
     bindVbo();
+    m_vao.release();
+    doneCurrent();
     update();
 }
 
